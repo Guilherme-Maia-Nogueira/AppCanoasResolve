@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canoas Resolve - App de Denúncias</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Tela Home -->
+    <div class="container home" id="home-screen">
+        <header>
+            <a href="#" aria-label="Acessar ajuda" onclick="showAjuda()"><img src="img/chat.png" alt="Ajuda"></a>
+            <h1>Canoas Resolve</h1>
+        </header>
+        <main>
+            <button class="denounce-btn" aria-label="Iniciar nova denúncia" onclick="showForm()">
+                <img src="img/alert.png" alt="Ícone de alerta" class="camera-icon">
+                Denunciar
+            </button>
+            <section class="recent-denounces">
+                <h2>Minhas Denúncias</h2>
+                <div class="denounce-item" onclick="showDetails()" role="button" aria-label="Ver detalhes da denúncia Buraco">
+                    <p>Buraco - Em Análise</p>
+                    <span>10/05/2025</span>
+                </div>
+                <div class="denounce-item" onclick="showDetails()" role="button" aria-label="Ver detalhes da denúncia Lixo">
+                    <p>Lixo - Resolvido</p>
+                    <span>08/05/2025</span>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" class="active" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- Tela Formulário de Denúncia -->
+    <div class="container form hidden" id="form-screen">
+        <header>
+            <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
+            <h1>Nova Denúncia</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <label for="photo-upload">Adicionar Foto</label>
+                <div class="photo-upload">
+                    <input type="file" id="photo-upload" accept="image/*" aria-label="Selecionar foto do problema">
+                </div>
+            </section>
+            <section class="form-section">
+                <label for="category">Categoria</label>
+                <select id="category" aria-label="Selecionar categoria do problema">
+                    <option value="buraco">Buraco</option>
+                    <option value="lixo">Lixo</option>
+                    <option value="alagamento">Alagamento</option>
+                    <option value="iluminacao">Iluminação</option>
+                    <option value="calcada">Calçada</option>
+                </select>
+            </section>
+            <section class="form-section">
+                <label for="description">Descrição (opcional)</label>
+                <textarea class="description"  placeholder="Descreva o problema..." aria-label="Descrição do problema"></textarea>
+            </section>
+            <section class="form-section">
+                <label>Localização</label>
+                <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+            <button class="submit-btn" aria-label="Enviar denúncia">Enviar</button>
+            <button class="offline-btn" aria-label="Salvar denúncia offline">Salvar Offline</button>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" class="active" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- Tela Detalhes da Denúncia -->
+    <div class="container details hidden" id="details-screen">
+        <header>
+            <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
+            <h1>Detalhes da Denúncia</h1>
+        </header>
+        <main>
+            <section class="details-section">
+                <h2>Informações</h2>
+                <p><strong>Categoria:</strong> Buraco</p>
+                <p><strong>Status:</strong> Em Análise</p>
+                <p><strong>Data de Envio:</strong> 10/05/2025</p>
+            </section>
+            <section class="details-section">
+                <h2>Foto</h2>
+                <img src="https://via.placeholder.com/300x200?text=Buraco" alt="Foto da denúncia" class="uploaded-photo">
+            </section>
+            <section class="details-section">
+                <h2>Descrição</h2>
+                <p>Buraco profundo na esquina da Rua X, próximo ao mercado.</p>
+            </section>
+            <section class="details-section">
+                <h2>Localização</h2>
+                <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+            <section class="details-section">
+                <h2>Atualizações</h2>
+                <p>12/05/2025: Reparo agendado para 15/05/2025.</p>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" class="active" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- Tela Mapa -->
+    <div class="container mapa hidden" id="mapa-screen">
+        <header>
+            <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
+            <h1>Denúncias Próximas</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <label for="map-filter">Filtrar por Categoria</label>
+                <select id="map-filter" aria-label="Filtrar denúncias por categoria">
+                    <option value="todas">Todas</option>
+                    <option value="buraco">Buraco</option>
+                    <option value="lixo">Lixo</option>
+                    <option value="alagamento">Alagamento</option>
+                    <option value="iluminacao">Iluminação</option>
+                    <option value="calcada">Calçada</option>
+                </select>
+            </section>
+            <section class="form-section">
+                <label>Mapa</label>
+                <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" class="active" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- Tela Configurações -->
+    <div class="container config hidden" id="config-screen">
+        <header>
+            <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
+            <h1>Configurações</h1>
+        </header>
+        <main>
+            <section class="config-section">
+                <h2>Notificações</h2>
+                <label class="toggle">
+                    <input type="checkbox" aria-label="Ativar ou desativar notificações">
+                    <span>Receber notificações</span>
+                </label>
+            </section>
+            <section class="config-section">
+                <h2>Acessibilidade</h2>
+                <label class="toggle">
+                    <input type="checkbox" aria-label="Ativar modo de alto contraste">
+                    <span>Alto contraste</span>
+                </label>
+                <label class="select-label">
+                    <span>Tamanho da fonte</span>
+                    <select aria-label="Selecionar tamanho da fonte">
+                        <option value="normal">Normal</option>
+                        <option value="grande">Grande</option>
+                        <option value="muito-grande">Muito Grande</option>
+                    </select>
+                </label>
+            </section>
+            <section class="config-section">
+                <h2>Conta</h2>
+                <button class="logout-btn" aria-label="Fazer logout">Logout</button>
+            </section>
+            <section class="config-section">
+                <h2>Idioma</h2>
+                <select aria-label="Selecionar idioma">
+                    <option value="pt-br">Português (BR)</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" class="active" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <!-- Tela Ajuda -->
+    <div class="container ajuda hidden" id="ajuda-screen">
+        <header>
+            <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
+            <h1>Ajuda</h1>
+        </header>
+        <main>
+            <section class="chat-section">
+                <h2>Conversa com o Bot de Suporte</h2>
+                <div class="chat-message bot">
+                    <p><strong>Bot:</strong> Olá! Bem-vindo ao Canoas Resolve. Como posso ajudar você a fazer uma denúncia?</p>
+                </div>
+                <div class="chat-message user">
+                    <p><strong>Você:</strong> Como faço para denunciar um buraco na rua?</p>
+                </div>
+                <div class="chat-message bot">
+                    <p><strong>Bot:</strong> É simples! Na tela inicial, clique no botão verde "Denunciar". Depois, adicione uma foto do buraco, selecione a categoria "Buraco", escreva uma descrição (se quiser) e confirme a localização no mapa. Por fim, clique em "Enviar".</p>
+                </div>
+                <div class="chat-message user">
+                    <p><strong>Você:</strong> E se eu estiver sem internet?</p>
+                </div>
+                <div class="chat-message bot">
+                    <p><strong>Bot:</strong> Você pode salvar a denúncia offline clicando em "Salvar Offline" no formulário. Quando estiver conectado, a denúncia será enviada automaticamente.</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <nav>
+                <a href="#" aria-label="Página inicial" onclick="showHome()"><img src="img/home.png" alt="Home"></a>
+                <a href="#" aria-label="Mapa de denúncias" onclick="showMapa()"><img src="img/mapColor.png" alt="Mapa"></a>
+                <a href="#" aria-label="Configurações" onclick="showConfig()"><img src="img/config.png" alt="Configurações"></a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('form-screen').classList.remove('hidden');
+            document.getElementById('details-screen').classList.add('hidden');
+            document.getElementById('mapa-screen').classList.add('hidden');
+            document.getElementById('config-screen').classList.add('hidden');
+            document.getElementById('ajuda-screen').classList.add('hidden');
+        }
+
+        function showHome() {
+            document.getElementById('form-screen').classList.add('hidden');
+            document.getElementById('home-screen').classList.remove('hidden');
+            document.getElementById('details-screen').classList.add('hidden');
+            document.getElementById('mapa-screen').classList.add('hidden');
+            document.getElementById('config-screen').classList.add('hidden');
+            document.getElementById('ajuda-screen').classList.add('hidden');
+        }
+
+        function showDetails() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('form-screen').classList.add('hidden');
+            document.getElementById('details-screen').classList.remove('hidden');
+            document.getElementById('mapa-screen').classList.add('hidden');
+            document.getElementById('config-screen').classList.add('hidden');
+            document.getElementById('ajuda-screen').classList.add('hidden');
+        }
+
+        function showMapa() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('form-screen').classList.add('hidden');
+            document.getElementById('details-screen').classList.add('hidden');
+            document.getElementById('mapa-screen').classList.remove('hidden');
+            document.getElementById('config-screen').classList.add('hidden');
+            document.getElementById('ajuda-screen').classList.add('hidden');
+        }
+
+        function showConfig() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('form-screen').classList.add('hidden');
+            document.getElementById('details-screen').classList.add('hidden');
+            document.getElementById('mapa-screen').classList.add('hidden');
+            document.getElementById('config-screen').classList.remove('hidden');
+            document.getElementById('ajuda-screen').classList.add('hidden');
+        }
+
+        function showAjuda() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('form-screen').classList.add('hidden');
+            document.getElementById('details-screen').classList.add('hidden');
+            document.getElementById('mapa-screen').classList.add('hidden');
+            document.getElementById('config-screen').classList.add('hidden');
+            document.getElementById('ajuda-screen').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 375px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+}
+/* 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+} */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: #d4edda; /* Verde suave para a barra superior */
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    background: #d4edda; /* Verde suave para a barra inferior */
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Tela Home */
+.home header {
+    position: relative;
+    justify-content: center;
+}
+
+.home header a {
+    position: absolute;
+    right: 20px;
+}
+
+.home header a img {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.denounce-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    background: #00cc00;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.camera-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.recent-denounces h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.denounce-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.denounce-item:hover {
+    background: #e0e0e0;
+}
+
+.denounce-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.denounce-item span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* footer {
+    background: #f5f5f5;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+} */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    padding: 10px;
+}
+
+nav img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Tela Formulário */
+.form header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.form header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.form header a img {
+    width: 24px;
+    height: 24px;
+}
+
+.form header a:first-child {
+    margin-right: 10px;
+    position: absolute;
+    left: 20px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.description{
+    width: 93%;
+}
+
+.photo-upload {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.uploaded-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+.submit-btn, .offline-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    background: #00cc00;
+    color: #fff;
+}
+
+.offline-btn {
+    background: #666;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tela Detalhes */
+.details header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.details header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.details header a img {
+    width: 24px;
+    height: 24px;
+}
+
+.details header a {
+    position: absolute;
+    left: 20px;
+}
+
+.details-section {
+    margin-bottom: 20px;
+}
+
+.details-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.details-section p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Tela Mapa */
+.mapa header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mapa header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.mapa header a img {
+    width: 24px;
+    height: 24px;
+}
+
+.mapa header a {
+    position: absolute;
+    left: 20px;
+}
+
+/* Tela Configurações */
+.config header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.config header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.config header a img {
+    width: 24px;
+    height: 24px;
+}
+
+.config header a {
+    position: absolute;
+    left: 20px;
+}
+
+.config-section {
+    margin-bottom: 20px;
+}
+
+.config-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toggle input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.toggle span {
+    font-size: 16px;
+}
+
+.select-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-label span {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 15px;
+    background: #ff4444;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Tela Configurações */
+.toggle, .select-label select, .logout-btn {
+    cursor: pointer; /* Adiciona mãozinha nas opções interativas */
+}
+
+/* Tela Ajuda */
+.ajuda header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.ajuda header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+.ajuda header a img {
+    width: 24px;
+    height: 24px;
+}
+
+.ajuda header a {
+    position: absolute;
+    left: 20px;
+}
+
+.chat-section {
+    margin-bottom: 20px;
+}
+
+.chat-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.chat-message.bot {
+    background: #e0f7e0;
+    text-align: left;
+}
+
+.chat-message.user {
+    background: #f0f0f0;
+    text-align: right;
+}
+
+.chat-message p {
+    margin: 0;
+    font-size: 16px;
+}
