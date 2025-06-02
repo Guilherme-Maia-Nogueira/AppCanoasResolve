@@ -5,7 +5,7 @@ O **Canoas Resolve** é um protótipo interativo de alta fidelidade de um aplica
 
 ## Demonstração
 O protótipo está hospedado no GitHub Pages e pode ser acessado diretamente no navegador através do seguinte link:
-- [Canoas Resolve - Protótipo Interativo](https://seu-usuario.github.io/canoas-resolve/)
+[- [Canoas Resolve - Protótipo Interativo](https://seu-usuario.github.io/canoas-resolve/)](https://guilherme-maia-nogueira.github.io/AppCanoasResolve/)
 
 Substitua `seu-usuario` pelo seu nome de usuário do GitHub para acessar o link correto.
 
