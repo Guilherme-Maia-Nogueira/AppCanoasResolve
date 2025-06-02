@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canoas Resolve - App de Denúncias</title>
     <link rel="stylesheet" href="css/styles.css">
+     <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Tela Home -->
@@ -64,7 +65,7 @@
             </section>
             <section class="form-section">
                 <label for="description">Descrição (opcional)</label>
-                <textarea class="description"  placeholder="Descreva o problema..." aria-label="Descrição do problema"></textarea>
+                <textarea class="description" placeholder="Descreva o problema..." aria-label="Descrição do problema"></textarea>
             </section>
             <section class="form-section">
                 <label>Localização</label>
@@ -163,19 +164,19 @@
             <section class="config-section">
                 <h2>Notificações</h2>
                 <label class="toggle">
-                    <input type="checkbox" aria-label="Ativar ou desativar notificações">
+                    <input type="checkbox" id="notifications-toggle" aria-label="Ativar ou desativar notificações">
                     <span>Receber notificações</span>
                 </label>
             </section>
             <section class="config-section">
                 <h2>Acessibilidade</h2>
                 <label class="toggle">
-                    <input type="checkbox" aria-label="Ativar modo de alto contraste">
+                    <input type="checkbox" id="high-contrast-toggle" aria-label="Ativar modo de alto contraste">
                     <span>Alto contraste</span>
                 </label>
                 <label class="select-label">
                     <span>Tamanho da fonte</span>
-                    <select aria-label="Selecionar tamanho da fonte">
+                    <select id="font-size-select" aria-label="Selecionar tamanho da fonte">
                         <option value="normal">Normal</option>
                         <option value="grande">Grande</option>
                         <option value="muito-grande">Muito Grande</option>
@@ -188,7 +189,7 @@
             </section>
             <section class="config-section">
                 <h2>Idioma</h2>
-                <select aria-label="Selecionar idioma">
+                <select id="language-select" aria-label="Selecionar idioma">
                     <option value="pt-br">Português (BR)</option>
                     <option value="en">English</option>
                     <option value="es">Español</option>
@@ -239,60 +240,5 @@
         </footer>
     </div>
 
-    <script>
-        function showForm() {
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('form-screen').classList.remove('hidden');
-            document.getElementById('details-screen').classList.add('hidden');
-            document.getElementById('mapa-screen').classList.add('hidden');
-            document.getElementById('config-screen').classList.add('hidden');
-            document.getElementById('ajuda-screen').classList.add('hidden');
-        }
-
-        function showHome() {
-            document.getElementById('form-screen').classList.add('hidden');
-            document.getElementById('home-screen').classList.remove('hidden');
-            document.getElementById('details-screen').classList.add('hidden');
-            document.getElementById('mapa-screen').classList.add('hidden');
-            document.getElementById('config-screen').classList.add('hidden');
-            document.getElementById('ajuda-screen').classList.add('hidden');
-        }
-
-        function showDetails() {
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('form-screen').classList.add('hidden');
-            document.getElementById('details-screen').classList.remove('hidden');
-            document.getElementById('mapa-screen').classList.add('hidden');
-            document.getElementById('config-screen').classList.add('hidden');
-            document.getElementById('ajuda-screen').classList.add('hidden');
-        }
-
-        function showMapa() {
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('form-screen').classList.add('hidden');
-            document.getElementById('details-screen').classList.add('hidden');
-            document.getElementById('mapa-screen').classList.remove('hidden');
-            document.getElementById('config-screen').classList.add('hidden');
-            document.getElementById('ajuda-screen').classList.add('hidden');
-        }
-
-        function showConfig() {
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('form-screen').classList.add('hidden');
-            document.getElementById('details-screen').classList.add('hidden');
-            document.getElementById('mapa-screen').classList.add('hidden');
-            document.getElementById('config-screen').classList.remove('hidden');
-            document.getElementById('ajuda-screen').classList.add('hidden');
-        }
-
-        function showAjuda() {
-            document.getElementById('home-screen').classList.add('hidden');
-            document.getElementById('form-screen').classList.add('hidden');
-            document.getElementById('details-screen').classList.add('hidden');
-            document.getElementById('mapa-screen').classList.add('hidden');
-            document.getElementById('config-screen').classList.add('hidden');
-            document.getElementById('ajuda-screen').classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
