@@ -5,6 +5,18 @@ body {
     color: #000;
     font-size: 16px;
     line-height: 1.5;
+    transition: font-size 0.3s ease;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .container {
@@ -14,6 +26,12 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+}
+
+.container:not(.hidden) {
+    animation-name: slideInFromRight;
 }
 
 header {
@@ -57,18 +75,41 @@ main {
     padding: 20px;
 }
 
-.denounce-btn {
+.denounce-btn,
+.submit-btn,
+.offline-btn,
+.logout-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     padding: 15px;
-    background: #00cc00;
     color: #fff;
     font-size: 1.125em;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.15s ease, filter 0.3s ease;
+}
+
+.denounce-btn:hover,
+.submit-btn:hover,
+.offline-btn:hover,
+.logout-btn:hover {
+    filter: brightness(110%);
+}
+
+.denounce-btn:active,
+.submit-btn:active,
+.offline-btn:active,
+.logout-btn:active {
+    transform: scale(0.98);
+    filter: brightness(100%);
+}
+
+.denounce-btn {
+    background: #00cc00;
     margin-bottom: 20px;
 }
 
@@ -91,6 +132,7 @@ main {
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .denounce-item:hover {
@@ -114,6 +156,11 @@ nav {
 
 nav a {
     padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
 }
 
 nav img {
@@ -170,19 +217,29 @@ nav img {
     margin-bottom: 10px;
 }
 
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-}
-
-select, textarea {
+input[type="file"],
+select,
+textarea {
     width: 100%;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+input[type="file"] {
+   /* Estilização do botão interno é limitada, mas a borda pode reagir */
+}
+
+
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
 
 textarea {
     resize: none;
@@ -196,28 +253,16 @@ textarea {
     border: 0;
 }
 
-.submit-btn, .offline-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.125em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
 .submit-btn {
     background: #00cc00;
-    color: #fff;
 }
 
 .offline-btn {
     background: #666;
-    color: #fff;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .details header {
@@ -314,6 +359,7 @@ textarea {
 
 .toggle input[type="checkbox"] {
     margin-right: 10px;
+    transform: scale(1.2);
 }
 
 .toggle span {
@@ -331,14 +377,7 @@ textarea {
 }
 
 .logout-btn {
-    width: 100%;
-    padding: 15px;
     background: #ff4444;
-    color: #fff;
-    font-size: 1.125em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 .toggle, .select-label select, .logout-btn {
