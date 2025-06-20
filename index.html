@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canoas Resolve - App de Denúncias</title>
+    <title data-translate-key="page_title">Canoas Resolve - App de Denúncias</title>
     <link rel="stylesheet" href="css/styles.css">
-     <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Tela Home -->
+
     <div class="container home" id="home-screen">
         <header>
             <a href="#" aria-label="Acessar ajuda" onclick="showAjuda()"><img src="img/chat.png" alt="Ajuda"></a>
-            <h1>Canoas Resolve</h1>
+            <h1 data-translate-key="app_title">Canoas Resolve</h1>
         </header>
         <main>
             <button class="denounce-btn" aria-label="Iniciar nova denúncia" onclick="showForm()">
                 <img src="img/alert.png" alt="Ícone de alerta" class="camera-icon">
-                Denunciar
+                <span data-translate-key="home_main_button_text">Denunciar</span>
             </button>
             <section class="recent-denounces">
-                <h2>Minhas Denúncias</h2>
+                <h2 data-translate-key="home_my_reports_title">Minhas Denúncias</h2>
                 <div class="denounce-item" onclick="showDetails()" role="button" aria-label="Ver detalhes da denúncia Buraco">
-                    <p>Buraco - Em Análise</p>
+                    <p><span data-translate-key="report_type_hole">Buraco</span> - <span data-translate-key="report_status_analysis">Em Análise</span></p>
                     <span>10/05/2025</span>
                 </div>
                 <div class="denounce-item" onclick="showDetails()" role="button" aria-label="Ver detalhes da denúncia Lixo">
-                    <p>Lixo - Resolvido</p>
+                    <p><span data-translate-key="report_type_garbage">Lixo</span> - <span data-translate-key="report_status_resolved">Resolvido</span></p>
                     <span>08/05/2025</span>
                 </div>
             </section>
@@ -40,39 +40,38 @@
         </footer>
     </div>
 
-    <!-- Tela Formulário de Denúncia -->
     <div class="container form hidden" id="form-screen">
         <header>
             <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
-            <h1>Nova Denúncia</h1>
+            <h1 data-translate-key="form_title">Nova Denúncia</h1>
         </header>
         <main>
             <section class="form-section">
-                <label for="photo-upload">Adicionar Foto</label>
+                <label for="photo-upload" data-translate-key="form_add_photo_label">Adicionar Foto</label>
                 <div class="photo-upload">
                     <input type="file" id="photo-upload" accept="image/*" aria-label="Selecionar foto do problema">
                 </div>
             </section>
             <section class="form-section">
-                <label for="category">Categoria</label>
+                <label for="category" data-translate-key="form_category_label">Categoria</label>
                 <select id="category" aria-label="Selecionar categoria do problema">
-                    <option value="buraco">Buraco</option>
-                    <option value="lixo">Lixo</option>
-                    <option value="alagamento">Alagamento</option>
-                    <option value="iluminacao">Iluminação</option>
-                    <option value="calcada">Calçada</option>
+                    <option value="buraco" data-translate-key="category_hole">Buraco</option>
+                    <option value="lixo" data-translate-key="category_garbage">Lixo</option>
+                    <option value="alagamento" data-translate-key="category_flood">Alagamento</option>
+                    <option value="iluminacao" data-translate-key="category_lighting">Iluminação</option>
+                    <option value="calcada" data-translate-key="category_sidewalk">Calçada</option>
                 </select>
             </section>
             <section class="form-section">
-                <label for="description">Descrição (opcional)</label>
-                <textarea class="description" placeholder="Descreva o problema..." aria-label="Descrição do problema"></textarea>
+                <label for="description" data-translate-key="form_description_label">Descrição (opcional)</label>
+                <textarea id="description" class="description" data-translate-key-placeholder="form_description_placeholder" placeholder="Descreva o problema..." aria-label="Descrição do problema"></textarea>
             </section>
             <section class="form-section">
-                <label>Localização</label>
+                <label data-translate-key="form_location_label">Localização</label>
                 <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
-            <button class="submit-btn" aria-label="Enviar denúncia">Enviar</button>
-            <button class="offline-btn" aria-label="Salvar denúncia offline">Salvar Offline</button>
+            <button class="submit-btn" data-translate-key="form_submit_button" aria-label="Enviar denúncia" onclick="alert('Denúncia enviada')">Enviar</button>
+            <button class="offline-btn" data-translate-key="form_save_offline_button" aria-label="Salvar denúncia offline" onclick="alert('Denúncia salva')">Salvar Offline</button>
         </main>
         <footer>
             <nav>
@@ -83,33 +82,32 @@
         </footer>
     </div>
 
-    <!-- Tela Detalhes da Denúncia -->
     <div class="container details hidden" id="details-screen">
         <header>
             <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
-            <h1>Detalhes da Denúncia</h1>
+            <h1 data-translate-key="details_title">Detalhes da Denúncia</h1>
         </header>
         <main>
             <section class="details-section">
-                <h2>Informações</h2>
-                <p><strong>Categoria:</strong> Buraco</p>
-                <p><strong>Status:</strong> Em Análise</p>
-                <p><strong>Data de Envio:</strong> 10/05/2025</p>
+                <h2 data-translate-key="details_info_section_title">Informações</h2>
+                <p><strong data-translate-key="details_category_field_label">Categoria:</strong> Buraco</p>
+                <p><strong data-translate-key="details_status_field_label">Status:</strong> Em Análise</p>
+                <p><strong data-translate-key="details_date_field_label">Data de Envio:</strong> 10/05/2025</p>
             </section>
             <section class="details-section">
-                <h2>Foto</h2>
+                <h2 data-translate-key="details_photo_section_title">Foto</h2>
                 <img src="https://via.placeholder.com/300x200?text=Buraco" alt="Foto da denúncia" class="uploaded-photo">
             </section>
             <section class="details-section">
-                <h2>Descrição</h2>
+                <h2 data-translate-key="details_description_section_title">Descrição</h2>
                 <p>Buraco profundo na esquina da Rua X, próximo ao mercado.</p>
             </section>
             <section class="details-section">
-                <h2>Localização</h2>
+                <h2 data-translate-key="details_location_section_title">Localização</h2>
                 <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
             <section class="details-section">
-                <h2>Atualizações</h2>
+                <h2 data-translate-key="details_updates_section_title">Atualizações</h2>
                 <p>12/05/2025: Reparo agendado para 15/05/2025.</p>
             </section>
         </main>
@@ -122,26 +120,25 @@
         </footer>
     </div>
 
-    <!-- Tela Mapa -->
     <div class="container mapa hidden" id="mapa-screen">
         <header>
             <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
-            <h1>Denúncias Próximas</h1>
+            <h1 data-translate-key="map_title">Denúncias Próximas</h1>
         </header>
         <main>
             <section class="form-section">
-                <label for="map-filter">Filtrar por Categoria</label>
+                <label for="map-filter" data-translate-key="map_filter_label">Filtrar por Categoria</label>
                 <select id="map-filter" aria-label="Filtrar denúncias por categoria">
-                    <option value="todas">Todas</option>
-                    <option value="buraco">Buraco</option>
-                    <option value="lixo">Lixo</option>
-                    <option value="alagamento">Alagamento</option>
-                    <option value="iluminacao">Iluminação</option>
-                    <option value="calcada">Calçada</option>
+                    <option value="todas" data-translate-key="map_filter_all">Todas</option>
+                    <option value="buraco" data-translate-key="category_hole">Buraco</option>
+                    <option value="lixo" data-translate-key="category_garbage">Lixo</option>
+                    <option value="alagamento" data-translate-key="category_flood">Alagamento</option>
+                    <option value="iluminacao" data-translate-key="category_lighting">Iluminação</option>
+                    <option value="calcada" data-translate-key="category_sidewalk">Calçada</option>
                 </select>
             </section>
             <section class="form-section">
-                <label>Mapa</label>
+                <label data-translate-key="map_map_section_label">Mapa</label>
                 <iframe class="map-placeholder" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.399279140418!2d-51.156271525415306!3d-29.795007119752523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951968eda5d3a201%3A0x5eaff8cfc4e39f47!2sUniversidade%20do%20Vale%20do%20Rio%20dos%20Sinos%20-%20Campus%20S%C3%A3o%20Leopoldo!5e0!3m2!1spt-BR!2sbr!4v1748301032606!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
         </main>
@@ -154,41 +151,40 @@
         </footer>
     </div>
 
-    <!-- Tela Configurações -->
     <div class="container config hidden" id="config-screen">
         <header>
             <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
-            <h1>Configurações</h1>
+            <h1 data-translate-key="settings_title">Configurações</h1>
         </header>
         <main>
             <section class="config-section">
-                <h2>Notificações</h2>
+                <h2 data-translate-key="settings_notifications_section_title">Notificações</h2>
                 <label class="toggle">
                     <input type="checkbox" id="notifications-toggle" aria-label="Ativar ou desativar notificações">
-                    <span>Receber notificações</span>
+                    <span data-translate-key="settings_receive_notifications_label">Receber notificações</span>
                 </label>
             </section>
             <section class="config-section">
-                <h2>Acessibilidade</h2>
+                <h2 data-translate-key="settings_accessibility_section_title">Acessibilidade</h2>
                 <label class="toggle">
                     <input type="checkbox" id="high-contrast-toggle" aria-label="Ativar modo de alto contraste">
-                    <span>Alto contraste</span>
+                    <span data-translate-key="settings_high_contrast_label">Alto contraste</span>
                 </label>
                 <label class="select-label">
-                    <span>Tamanho da fonte</span>
+                    <span data-translate-key="settings_font_size_label">Tamanho da fonte</span>
                     <select id="font-size-select" aria-label="Selecionar tamanho da fonte">
-                        <option value="normal">Normal</option>
-                        <option value="grande">Grande</option>
-                        <option value="muito-grande">Muito Grande</option>
+                        <option value="normal" data-translate-key="font_size_normal">Normal</option>
+                        <option value="grande" data-translate-key="font_size_large">Grande</option>
+                        <option value="muito-grande" data-translate-key="font_size_very_large">Muito Grande</option>
                     </select>
                 </label>
             </section>
             <section class="config-section">
-                <h2>Conta</h2>
-                <button class="logout-btn" aria-label="Fazer logout">Logout</button>
+                <h2 data-translate-key="settings_account_section_title">Conta</h2>
+                <button class="logout-btn" data-translate-key="settings_logout_button" aria-label="Fazer logout">Logout</button>
             </section>
             <section class="config-section">
-                <h2>Idioma</h2>
+                <h2 data-translate-key="settings_language_section_title">Idioma</h2>
                 <select id="language-select" aria-label="Selecionar idioma">
                     <option value="pt-br">Português (BR)</option>
                     <option value="en">English</option>
@@ -205,29 +201,28 @@
         </footer>
     </div>
 
-    <!-- Tela Ajuda -->
     <div class="container ajuda hidden" id="ajuda-screen">
         <header>
             <a href="#" aria-label="Voltar à página inicial" onclick="showHome()"><img src="img/setaVoltar.png" alt="Voltar"></a>
-            <h1>Ajuda</h1>
+            <h1 data-translate-key="help_title">Ajuda</h1>
         </header>
         <main>
             <section class="chat-section">
-                <h2>Conversa com o Bot de Suporte</h2>
+                <h2 data-translate-key="help_chat_section_title">Conversa com o Bot de Suporte</h2>
                 <div class="chat-message bot">
-                    <p><strong>Bot:</strong> Olá! Bem-vindo ao Canoas Resolve. Como posso ajudar você a fazer uma denúncia?</p>
+                    <p><strong data-translate-key="chat_bot_label">Bot:</strong> <span data-translate-key="help_chat_msg1">Olá! Bem-vindo ao Canoas Resolve. Como posso ajudar você a fazer uma denúncia?</span></p>
                 </div>
                 <div class="chat-message user">
-                    <p><strong>Você:</strong> Como faço para denunciar um buraco na rua?</p>
+                    <p><strong data-translate-key="chat_you_label">Você:</strong> <span data-translate-key="help_chat_msg2">Como faço para denunciar um buraco na rua?</span></p>
                 </div>
                 <div class="chat-message bot">
-                    <p><strong>Bot:</strong> É simples! Na tela inicial, clique no botão verde "Denunciar". Depois, adicione uma foto do buraco, selecione a categoria "Buraco", escreva uma descrição (se quiser) e confirme a localização no mapa. Por fim, clique em "Enviar".</p>
+                    <p><strong data-translate-key="chat_bot_label">Bot:</strong> <span data-translate-key="help_chat_msg3">É simples! Na tela inicial, clique no botão verde "Denunciar". Depois, adicione uma foto do buraco, selecione a categoria "Buraco", escreva uma descrição (se quiser) e confirme a localização no mapa. Por fim, clique em "Enviar".</span></p>
                 </div>
                 <div class="chat-message user">
-                    <p><strong>Você:</strong> E se eu estiver sem internet?</p>
+                    <p><strong data-translate-key="chat_you_label">Você:</strong> <span data-translate-key="help_chat_msg4">E se eu estiver sem internet?</span></p>
                 </div>
                 <div class="chat-message bot">
-                    <p><strong>Bot:</strong> Você pode salvar a denúncia offline clicando em "Salvar Offline" no formulário. Quando estiver conectado, a denúncia será enviada automaticamente.</p>
+                    <p><strong data-translate-key="chat_bot_label">Bot:</strong> <span data-translate-key="help_chat_msg5">Você pode salvar a denúncia offline clicando em "Salvar Offline" no formulário. Quando estiver conectado, a denúncia será enviada automaticamente.</span></p>
                 </div>
             </section>
         </main>
